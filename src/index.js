@@ -8,23 +8,23 @@ const unSubscribed = store.subscribe(() => {
 })
 
 store.dispatch(
-	createBug('BUG 1') //sending action
+	createBug({ description: 'BUG 1' }) //sending action
 )
 store.dispatch(
-	createBug('BUG 2')
-)
-
-
-store.dispatch(
-	resolveBug(1)
+	createBug({ description: 'BUG 2' })
 )
 
 
 store.dispatch(
-	updateBug(1, "UPDATED")
+	resolveBug({ id: 1 })
+)
+
+
+store.dispatch(
+	updateBug({ id: 1, description: "UPDATED" })
 )
 
 store.dispatch(
-	removeBug(1)
+	removeBug({ id: 1 })
 )
 
